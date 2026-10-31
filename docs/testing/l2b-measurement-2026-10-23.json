@@ -1,0 +1,58 @@
+{
+ "probe": "luminol_change_probe/2",
+ "run_at": "2026-10-23T13:44:35.655601+00:00",
+ "windows": "Microsoft Windows [Version 10.0.26300.9711]",
+ "last_access_setting": "DisableLastAccess = 2  (System Managed, Last Access Time Updates ENABLED)",
+ "control": {
+  "last_access_changed_files": 0,
+  "last_access_changed_dirs": 0,
+  "other_changes": 0
+ },
+ "luminol_script": ".\\src\\Luminol-Check.ps1",
+ "luminol_exit": 0,
+ "planted_files": 19,
+ "planted_dirs": 46,
+ "content_size_creation_modification_changes": [],
+ "last_access_changed_files": [
+  ".claude\\settings.json",
+  "AppData\\Local\\Google\\Chrome\\User Data\\Default\\History",
+  "AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\History",
+  "AppData\\Local\\Microsoft\\Windows\\Notifications\\wpndatabase.db",
+  "Downloads\\report.docx"
+ ],
+ "last_access_changed_dirs": [
+  ".claude\\projects",
+  ".claude\\projects\\p1",
+  ".codex",
+  ".codex\\sessions",
+  ".codex\\sessions\\2026",
+  ".codex\\sessions\\2026\\10",
+  ".codex\\sessions\\2026\\10\\10",
+  ".ollama",
+  "AppData\\Local\\Codex\\Logs",
+  "AppData\\Local\\Codex\\Logs\\2026",
+  "AppData\\Local\\Codex\\Logs\\2026\\10",
+  "AppData\\Local\\Codex\\Logs\\2026\\10\\12",
+  "AppData\\Local\\Google\\Chrome\\User Data",
+  "AppData\\Local\\Google\\Chrome\\User Data\\Default\\IndexedDB\\https_chatgpt.com_0.indexeddb.leveldb",
+  "AppData\\Local\\Google\\Chrome\\User Data\\Default\\IndexedDB\\https_claude.ai_0.indexeddb.leveldb",
+  "AppData\\Local\\Microsoft\\Edge\\User Data",
+  "AppData\\Roaming\\Claude",
+  "AppData\\Roaming\\Claude\\Local Storage",
+  "AppData\\Roaming\\Claude\\Local Storage\\leveldb",
+  "AppData\\Roaming\\Code\\User\\globalStorage\\saoudrizwan.claude-dev\\tasks",
+  "AppData\\Roaming\\Code\\User\\globalStorage\\saoudrizwan.claude-dev\\tasks\\1",
+  "AppData\\Roaming\\Microsoft\\Windows\\Recent",
+  "Downloads"
+ ],
+ "usn": {
+  "readable": false,
+  "error": "Error 5: Access is denied.",
+  "records_naming_planted_items": []
+ },
+ "report_files": [
+  "LUMINOL-Check_2026-10-13_170000_b0518881385c494ebb17144d5508ad47.html",
+  "LUMINOL-Check_2026-10-13_170000_b0518881385c494ebb17144d5508ad47.json"
+ ],
+ "verdict": "CONTENT_UNCHANGED"
+}

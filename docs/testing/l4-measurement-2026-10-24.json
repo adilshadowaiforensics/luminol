@@ -1,0 +1,203 @@
+{
+  "source_commit": "6f7ec6748f8da5e3ef547a23849dfc3ad9e6213d",
+  "windows": "Microsoft Windows [Version 10.0.26300.9711]",
+  "probe_runs": 3,
+  "control_valid_in_all_runs": true,
+  "other_changes_in_all_runs": 0,
+  "last_access_file_counts": [
+    5,
+    5,
+    5
+  ],
+  "last_access_folder_counts": [
+    25,
+    23,
+    23
+  ],
+  "folder_count_range": [
+    23,
+    25
+  ],
+  "counts_identical": false,
+  "runs": [
+    {
+      "probe": "luminol_change_probe/2",
+      "run_at": "2026-10-24T11:25:45.247773+00:00",
+      "windows": "Microsoft Windows [Version 10.0.26300.9711]",
+      "last_access_setting": "DisableLastAccess = 2  (System Managed, Last Access Time Updates ENABLED)",
+      "control": {
+        "last_access_changed_files": 0,
+        "last_access_changed_dirs": 0,
+        "other_changes": 0
+      },
+      "luminol_script": "src/Luminol-Check.ps1",
+      "luminol_exit": 0,
+      "planted_files": 19,
+      "planted_dirs": 46,
+      "content_size_creation_modification_changes": [],
+      "last_access_changed_files": [
+        ".claude\\settings.json",
+        "AppData\\Local\\Google\\Chrome\\User Data\\Default\\History",
+        "AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\History",
+        "AppData\\Local\\Microsoft\\Windows\\Notifications\\wpndatabase.db",
+        "Downloads\\report.docx"
+      ],
+      "last_access_changed_dirs": [
+        ".claude\\projects",
+        ".claude\\projects\\p1",
+        ".codex",
+        ".codex\\sessions",
+        ".codex\\sessions\\2026",
+        ".codex\\sessions\\2026\\10",
+        ".codex\\sessions\\2026\\10\\10",
+        ".ollama",
+        "AppData",
+        "AppData\\Local",
+        "AppData\\Local\\Codex\\Logs",
+        "AppData\\Local\\Codex\\Logs\\2026",
+        "AppData\\Local\\Codex\\Logs\\2026\\10",
+        "AppData\\Local\\Codex\\Logs\\2026\\10\\12",
+        "AppData\\Local\\Google\\Chrome\\User Data",
+        "AppData\\Local\\Google\\Chrome\\User Data\\Default\\IndexedDB\\https_chatgpt.com_0.indexeddb.leveldb",
+        "AppData\\Local\\Google\\Chrome\\User Data\\Default\\IndexedDB\\https_claude.ai_0.indexeddb.leveldb",
+        "AppData\\Local\\Microsoft\\Edge\\User Data",
+        "AppData\\Roaming\\Claude",
+        "AppData\\Roaming\\Claude\\Local Storage",
+        "AppData\\Roaming\\Claude\\Local Storage\\leveldb",
+        "AppData\\Roaming\\Code\\User\\globalStorage\\saoudrizwan.claude-dev\\tasks",
+        "AppData\\Roaming\\Code\\User\\globalStorage\\saoudrizwan.claude-dev\\tasks\\1",
+        "AppData\\Roaming\\Microsoft\\Windows\\Recent",
+        "Downloads"
+      ],
+      "usn": {
+        "readable": false,
+        "error": "Error 5: Access is denied.",
+        "records_naming_planted_items": []
+      },
+      "report_files": [
+        "LUMINOL-Check_2026-10-13_170000_35a50ccd513f4e5bafc03263871d9184.html",
+        "LUMINOL-Check_2026-10-13_170000_35a50ccd513f4e5bafc03263871d9184.json"
+      ],
+      "verdict": "CONTENT_UNCHANGED",
+      "source_result": "dist/l4-rc-probe-1/luminol_change_probe_20261024T112545Z.json"
+    },
+    {
+      "probe": "luminol_change_probe/2",
+      "run_at": "2026-10-24T11:26:04.187441+00:00",
+      "windows": "Microsoft Windows [Version 10.0.26300.9711]",
+      "last_access_setting": "DisableLastAccess = 2  (System Managed, Last Access Time Updates ENABLED)",
+      "control": {
+        "last_access_changed_files": 0,
+        "last_access_changed_dirs": 0,
+        "other_changes": 0
+      },
+      "luminol_script": "src/Luminol-Check.ps1",
+      "luminol_exit": 0,
+      "planted_files": 19,
+      "planted_dirs": 46,
+      "content_size_creation_modification_changes": [],
+      "last_access_changed_files": [
+        ".claude\\settings.json",
+        "AppData\\Local\\Google\\Chrome\\User Data\\Default\\History",
+        "AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\History",
+        "AppData\\Local\\Microsoft\\Windows\\Notifications\\wpndatabase.db",
+        "Downloads\\report.docx"
+      ],
+      "last_access_changed_dirs": [
+        ".claude\\projects",
+        ".claude\\projects\\p1",
+        ".codex",
+        ".codex\\sessions",
+        ".codex\\sessions\\2026",
+        ".codex\\sessions\\2026\\10",
+        ".codex\\sessions\\2026\\10\\10",
+        ".ollama",
+        "AppData\\Local\\Codex\\Logs",
+        "AppData\\Local\\Codex\\Logs\\2026",
+        "AppData\\Local\\Codex\\Logs\\2026\\10",
+        "AppData\\Local\\Codex\\Logs\\2026\\10\\12",
+        "AppData\\Local\\Google\\Chrome\\User Data",
+        "AppData\\Local\\Google\\Chrome\\User Data\\Default\\IndexedDB\\https_chatgpt.com_0.indexeddb.leveldb",
+        "AppData\\Local\\Google\\Chrome\\User Data\\Default\\IndexedDB\\https_claude.ai_0.indexeddb.leveldb",
+        "AppData\\Local\\Microsoft\\Edge\\User Data",
+        "AppData\\Roaming\\Claude",
+        "AppData\\Roaming\\Claude\\Local Storage",
+        "AppData\\Roaming\\Claude\\Local Storage\\leveldb",
+        "AppData\\Roaming\\Code\\User\\globalStorage\\saoudrizwan.claude-dev\\tasks",
+        "AppData\\Roaming\\Code\\User\\globalStorage\\saoudrizwan.claude-dev\\tasks\\1",
+        "AppData\\Roaming\\Microsoft\\Windows\\Recent",
+        "Downloads"
+      ],
+      "usn": {
+        "readable": false,
+        "error": "Error 5: Access is denied.",
+        "records_naming_planted_items": []
+      },
+      "report_files": [
+        "LUMINOL-Check_2026-10-13_170000_a9040e292b6444cdb678a66e35e31c6d.html",
+        "LUMINOL-Check_2026-10-13_170000_a9040e292b6444cdb678a66e35e31c6d.json"
+      ],
+      "verdict": "CONTENT_UNCHANGED",
+      "source_result": "dist/l4-rc-probe-2/luminol_change_probe_20261024T112604Z.json"
+    },
+    {
+      "probe": "luminol_change_probe/2",
+      "run_at": "2026-10-24T11:26:21.499970+00:00",
+      "windows": "Microsoft Windows [Version 10.0.26300.9711]",
+      "last_access_setting": "DisableLastAccess = 2  (System Managed, Last Access Time Updates ENABLED)",
+      "control": {
+        "last_access_changed_files": 0,
+        "last_access_changed_dirs": 0,
+        "other_changes": 0
+      },
+      "luminol_script": "src/Luminol-Check.ps1",
+      "luminol_exit": 0,
+      "planted_files": 19,
+      "planted_dirs": 46,
+      "content_size_creation_modification_changes": [],
+      "last_access_changed_files": [
+        ".claude\\settings.json",
+        "AppData\\Local\\Google\\Chrome\\User Data\\Default\\History",
+        "AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\History",
+        "AppData\\Local\\Microsoft\\Windows\\Notifications\\wpndatabase.db",
+        "Downloads\\report.docx"
+      ],
+      "last_access_changed_dirs": [
+        ".claude\\projects",
+        ".claude\\projects\\p1",
+        ".codex",
+        ".codex\\sessions",
+        ".codex\\sessions\\2026",
+        ".codex\\sessions\\2026\\10",
+        ".codex\\sessions\\2026\\10\\10",
+        ".ollama",
+        "AppData\\Local\\Codex\\Logs",
+        "AppData\\Local\\Codex\\Logs\\2026",
+        "AppData\\Local\\Codex\\Logs\\2026\\10",
+        "AppData\\Local\\Codex\\Logs\\2026\\10\\12",
+        "AppData\\Local\\Google\\Chrome\\User Data",
+        "AppData\\Local\\Google\\Chrome\\User Data\\Default\\IndexedDB\\https_chatgpt.com_0.indexeddb.leveldb",
+        "AppData\\Local\\Google\\Chrome\\User Data\\Default\\IndexedDB\\https_claude.ai_0.indexeddb.leveldb",
+        "AppData\\Local\\Microsoft\\Edge\\User Data",
+        "AppData\\Roaming\\Claude",
+        "AppData\\Roaming\\Claude\\Local Storage",
+        "AppData\\Roaming\\Claude\\Local Storage\\leveldb",
+        "AppData\\Roaming\\Code\\User\\globalStorage\\saoudrizwan.claude-dev\\tasks",
+        "AppData\\Roaming\\Code\\User\\globalStorage\\saoudrizwan.claude-dev\\tasks\\1",
+        "AppData\\Roaming\\Microsoft\\Windows\\Recent",
+        "Downloads"
+      ],
+      "usn": {
+        "readable": false,
+        "error": "Error 5: Access is denied.",
+        "records_naming_planted_items": []
+      },
+      "report_files": [
+        "LUMINOL-Check_2026-10-13_170000_ce8a200f74f34997aa7e649921ee6269.html",
+        "LUMINOL-Check_2026-10-13_170000_ce8a200f74f34997aa7e649921ee6269.json"
+      ],
+      "verdict": "CONTENT_UNCHANGED",
+      "source_result": "dist/l4-rc-probe-3/luminol_change_probe_20261024T112621Z.json"
+    }
+  ]
+}

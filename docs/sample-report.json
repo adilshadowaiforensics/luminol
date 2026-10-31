@@ -1,0 +1,937 @@
+{
+    "schema":  "luminol.check/1",
+    "luminol_version":  "0.1.1",
+    "catalog_version":  "2026-10-17",
+    "generated_at":  "2026-10-13T12:00:00Z",
+    "sample_data":  true,
+    "run_settings":  {
+                         "non_default":  true,
+                         "parameters":  [
+                                            "Now",
+                                            "BrowserProcessesForTest",
+                                            "SampleData",
+                                            "ProfileRoot"
+                                        ]
+                     },
+    "generated_local":  "Tuesday 13 October 2026, 17:00",
+    "duration_seconds":  0,
+    "computer":  {
+                     "os":  {
+                                "name":  "Synthetic Windows profile",
+                                "version":  "sample",
+                                "build":  "sample"
+                            },
+                     "powershell":  "Windows PowerShell 5.1",
+                     "profile":  "%USERPROFILE%"
+                 },
+    "last_access_updates":  {
+                                "raw":  2147483650,
+                                "enabled":  true,
+                                "system_managed":  true
+                            },
+    "last_access_message":  "Windows on this computer records when files are last opened, so this check updated the last-access time of the files and folders it read. It changed nothing else about them.",
+    "absence_note":  "Not found does not mean AI was not used. Cleared browser history, private (InPrivate or Incognito) windows, another browser or Windows account, a phone or another computer leave nothing here for LUMINOL to find, and LUMINOL cannot tell whether history was cleared.",
+    "browsers_open":  [
+
+                      ],
+    "summary":  {
+                    "evidence_found":  19,
+                    "urgent":  5,
+                    "services_seen":  [
+                                          {
+                                              "id":  "chatgpt",
+                                              "name":  "ChatGPT",
+                                              "seen_in":  [
+                                                              "ChatGPT desktop app",
+                                                              "ChatGPT / Codex agent",
+                                                              "Chrome history",
+                                                              "ChatGPT (web)",
+                                                              "downloaded files"
+                                                          ]
+                                          },
+                                          {
+                                              "id":  "claude",
+                                              "name":  "Claude",
+                                              "seen_in":  [
+                                                              "Claude desktop app",
+                                                              "Claude Code",
+                                                              "Chrome history",
+                                                              "Claude (web)"
+                                                          ]
+                                          },
+                                          {
+                                              "id":  "gemini",
+                                              "name":  "Gemini",
+                                              "seen_in":  [
+                                                              "Chrome history"
+                                                          ]
+                                          }
+                                      ],
+                    "not_found":  0,
+                    "could_not_check":  0,
+                    "partial_checks":  0
+                },
+    "actions":  [
+                    {
+                        "status":  "urgent",
+                        "tool":  "Claude (web)",
+                        "text":  "Text from the last day may still be here: preserve today.",
+                        "deadline":  "2026-10-13T22:48:00Z"
+                    },
+                    {
+                        "status":  "urgent",
+                        "tool":  "ChatGPT / Codex agent",
+                        "text":  "Preserve this file now, before any agent thread is deleted.",
+                        "deadline":  null
+                    },
+                    {
+                        "status":  "urgent",
+                        "tool":  "Windows",
+                        "text":  "Notifications from the last 2 days may still exist: preserve today.",
+                        "deadline":  null
+                    },
+                    {
+                        "status":  "urgent",
+                        "tool":  "ChatGPT / Codex agent",
+                        "text":  "Preserve these files now, before any agent thread is deleted.",
+                        "deadline":  null
+                    },
+                    {
+                        "status":  "urgent",
+                        "tool":  "ChatGPT / Codex agent",
+                        "text":  "Preserve this folder before a thread is deleted in the app.",
+                        "deadline":  null
+                    },
+                    {
+                        "status":  "rolling",
+                        "tool":  "ChatGPT desktop app",
+                        "text":  "Preserve before the app is updated or reinstalled.",
+                        "deadline":  "2026-10-27T06:00:00Z"
+                    },
+                    {
+                        "status":  "rolling",
+                        "tool":  "Claude Code",
+                        "text":  "Preserve transcripts before automatic deletion can remove them.",
+                        "deadline":  "2026-11-12T06:00:00Z"
+                    },
+                    {
+                        "status":  "rolling",
+                        "tool":  "Web browsers",
+                        "text":  "Preserve the browser profile; older visits drop off every day.",
+                        "deadline":  null
+                    },
+                    {
+                        "status":  "cloud",
+                        "tool":  "Gemini (Google account)",
+                        "text":  "Check the Gemini Activity auto-delete setting and export with Google Takeout now.",
+                        "deadline":  null
+                    },
+                    {
+                        "status":  "cloud",
+                        "tool":  "Claude account (Anthropic servers)",
+                        "text":  "Request an account export now (Claude \u003e Settings \u003e Privacy \u003e Export data) and download it when it arrives.",
+                        "deadline":  null
+                    },
+                    {
+                        "status":  "cloud",
+                        "tool":  "ChatGPT account (OpenAI servers)",
+                        "text":  "Request an account export now (ChatGPT \u003e Settings \u003e Data controls \u003e Export data) and download it within 24 hours of the email.",
+                        "deadline":  null
+                    },
+                    {
+                        "status":  "hold",
+                        "tool":  "Legal hold",
+                        "text":  "If this computer may matter in a dispute or investigation: do not delete chats, clear browser history or uninstall AI apps, and add the AI accounts and the locations in this report to the legal hold notice.",
+                        "deadline":  null
+                    }
+                ],
+    "hold_notice":  {
+                        "items":  [
+                                      {
+                                          "tool":  "Claude (web)",
+                                          "instruction":  "Do not clear site data for claude.ai."
+                                      },
+                                      {
+                                          "tool":  "ChatGPT / Codex agent",
+                                          "instruction":  "Do not delete, archive or clear agent threads in the Codex app, and keep the %USERPROFILE%\\.codex folder as it is."
+                                      },
+                                      {
+                                          "tool":  "Windows",
+                                          "instruction":  "Do not clear Windows notifications. Do not delete or move files downloaded from AI sites (Downloads, Desktop, Documents). Do not clear Windows\u0027 list of recently opened files."
+                                      },
+                                      {
+                                          "tool":  "ChatGPT desktop app",
+                                          "instruction":  "Do not delete or clear the app\u0027s log folders (%LOCALAPPDATA%\\Codex\\Logs and %LOCALAPPDATA%\\Packages\\OpenAI.Codex_*\\LocalCache\\Local\\Codex\\Logs). Keep the ChatGPT desktop app installed. Do not update, reset or sign out of it until its folder (%USERPROFILE%\\.codex) is preserved."
+                                      },
+                                      {
+                                          "tool":  "Claude Code",
+                                          "instruction":  "Do not delete Claude Code transcripts (%USERPROFILE%\\.claude\\projects). Preserve them before automatic deletion can remove them."
+                                      },
+                                      {
+                                          "tool":  "Web browsers",
+                                          "instruction":  "Do not clear browsing history, cookies or site data in any browser profile on this computer."
+                                      },
+                                      {
+                                          "tool":  "Gemini (Google account)",
+                                          "instruction":  "Do not delete Gemini Apps Activity or shorten its auto-delete period. Export it with Google Takeout now."
+                                      },
+                                      {
+                                          "tool":  "Claude account (Anthropic servers)",
+                                          "instruction":  "Do not delete Claude conversations or projects, change privacy settings, or close the account. Request an account export now."
+                                      },
+                                      {
+                                          "tool":  "ChatGPT account (OpenAI servers)",
+                                          "instruction":  "Do not delete or archive ChatGPT chats, use Temporary Chat, change Data controls, or close the account. Request an account export now."
+                                      },
+                                      {
+                                          "tool":  "Claude desktop app",
+                                          "instruction":  "Keep the Claude desktop app installed. Do not reset, sign out of or uninstall it."
+                                      },
+                                      {
+                                          "tool":  "Cursor",
+                                          "instruction":  "Do not reset Cursor or clear its chat or agent history."
+                                      },
+                                      {
+                                          "tool":  "VS Code AI agents (Cline, Roo, Kilo)",
+                                          "instruction":  "Do not remove the VS Code AI agent extensions or clear their task history."
+                                      },
+                                      {
+                                          "tool":  "Local AI (Ollama, LM Studio, GPT4All, Jan, AnythingLLM)",
+                                          "instruction":  "Do not delete local AI apps, their models or their saved chats."
+                                      },
+                                      {
+                                          "tool":  "ChatGPT (web)",
+                                          "instruction":  "Do not clear site data for chatgpt.com."
+                                      }
+                                  ],
+                        "clock_lines":  [
+                                            "Claude (web) - claude.ai storage inside the browser: recent activity may disappear within about 11 hours. (Lab measurement).",
+                                            "Windows - Windows notifications from AI apps: lasts about 2.4 to 3.9 days. (Lab measurement).",
+                                            "ChatGPT desktop app - App log files: oldest item reaches the 14-day reference window in about 14 days. (Lab measurement).",
+                                            "Claude Code - Claude Code session transcripts: oldest item reaches the 30-day reference window in about 30 days. (Vendor policy).",
+                                            "Web browsers - AI sites in browser history: reference window: about 90 days. (Vendor policy).",
+                                            "Gemini (Google account) - Gemini Apps Activity in the Google account: account activity follows its auto-delete setting; see vendor exceptions. (Vendor policy).",
+                                            "Claude account (Anthropic servers) - Chats stored in the Claude account: vendor describes a 30-day deletion window; see stated exceptions. (Vendor policy).",
+                                            "ChatGPT account (OpenAI servers) - Chats stored in the ChatGPT account: vendor describes a 30-day deletion window; see stated exceptions. (Vendor policy).",
+                                            "ChatGPT (web) - chatgpt.com storage inside the browser: not a reliable source of chat text. (Lab measurement).",
+                                            "ChatGPT desktop app - Prompt history kept by the ChatGPT desktop app: present after 15 days in the cited lab run. (Lab measurement).",
+                                            "Windows - Files downloaded from AI sites: the download mark may remain while the file stays in place. (System design).",
+                                            "Windows - Recently opened files list: present after 15 days in the cited lab run. (Lab measurement)."
+                                        ],
+                        "text":  "AI PRESERVATION NOTICE - DRAFT FOR COUNSEL TO ADAPT\nPrepared from a LUMINOL check of this computer on 13 October 2026 (Windows account shown as %USERPROFILE%).\nUntil you are told otherwise in writing, preserve all information created with or by AI tools, including the following found on this computer:\n1. Claude (web): Do not clear site data for claude.ai.\n2. ChatGPT / Codex agent: Do not delete, archive or clear agent threads in the Codex app, and keep the %USERPROFILE%\\.codex folder as it is.\n3. Windows: Do not clear Windows notifications. Do not delete or move files downloaded from AI sites (Downloads, Desktop, Documents). Do not clear Windows\u0027 list of recently opened files.\n4. ChatGPT desktop app: Do not delete or clear the app\u0027s log folders (%LOCALAPPDATA%\\Codex\\Logs and %LOCALAPPDATA%\\Packages\\OpenAI.Codex_*\\LocalCache\\Local\\Codex\\Logs). Keep the ChatGPT desktop app installed. Do not update, reset or sign out of it until its folder (%USERPROFILE%\\.codex) is preserved.\n5. Claude Code: Do not delete Claude Code transcripts (%USERPROFILE%\\.claude\\projects). Preserve them before automatic deletion can remove them.\n6. Web browsers: Do not clear browsing history, cookies or site data in any browser profile on this computer.\n7. Gemini (Google account): Do not delete Gemini Apps Activity or shorten its auto-delete period. Export it with Google Takeout now.\n8. Claude account (Anthropic servers): Do not delete Claude conversations or projects, change privacy settings, or close the account. Request an account export now.\n9. ChatGPT account (OpenAI servers): Do not delete or archive ChatGPT chats, use Temporary Chat, change Data controls, or close the account. Request an account export now.\n10. Claude desktop app: Keep the Claude desktop app installed. Do not reset, sign out of or uninstall it.\n11. Cursor: Do not reset Cursor or clear its chat or agent history.\n12. VS Code AI agents (Cline, Roo, Kilo): Do not remove the VS Code AI agent extensions or clear their task history.\n13. Local AI (Ollama, LM Studio, GPT4All, Jan, AnythingLLM): Do not delete local AI apps, their models or their saved chats.\n14. ChatGPT (web): Do not clear site data for chatgpt.com.\nRecords may disappear while this notice is in effect:\nClaude (web) - claude.ai storage inside the browser: recent activity may disappear within about 11 hours. (Lab measurement).\nWindows - Windows notifications from AI apps: lasts about 2.4 to 3.9 days. (Lab measurement).\nChatGPT desktop app - App log files: oldest item reaches the 14-day reference window in about 14 days. (Lab measurement).\nClaude Code - Claude Code session transcripts: oldest item reaches the 30-day reference window in about 30 days. (Vendor policy).\nWeb browsers - AI sites in browser history: reference window: about 90 days. (Vendor policy).\nGemini (Google account) - Gemini Apps Activity in the Google account: account activity follows its auto-delete setting; see vendor exceptions. (Vendor policy).\nClaude account (Anthropic servers) - Chats stored in the Claude account: vendor describes a 30-day deletion window; see stated exceptions. (Vendor policy).\nChatGPT account (OpenAI servers) - Chats stored in the ChatGPT account: vendor describes a 30-day deletion window; see stated exceptions. (Vendor policy).\nChatGPT (web) - chatgpt.com storage inside the browser: not a reliable source of chat text. (Lab measurement).\nChatGPT desktop app - Prompt history kept by the ChatGPT desktop app: present after 15 days in the cited lab run. (Lab measurement).\nWindows - Files downloaded from AI sites: the download mark may remain while the file stays in place. (System design).\nWindows - Recently opened files list: present after 15 days in the cited lab run. (Lab measurement).\nA preservation notice cannot stop automatic deletion: collect these items promptly.\nAlso preserve AI tools and accounts used on other devices (phones, home computers) and anything not listed here: this check covers this Windows account on this computer.\nDo not change retention or auto-delete settings, delete, reset or uninstall anything listed without written instructions from counsel.\nThis notice is a draft for your counsel to adapt."
+                    },
+    "evidence":  [
+                     {
+                         "id":  "claude-web-storage",
+                         "tool":  "Claude (web)",
+                         "service":  "claude",
+                         "evidence":  "claude.ai storage inside the browser",
+                         "why":  "Can hold recent prompt and reply text from claude.ai.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "summary":  {
+                                                        "files":  1,
+                                                        "bytes":  16,
+                                                        "newest":  "2026-10-13T06:00:00Z",
+                                                        "oldest":  "2026-10-13T06:00:00Z"
+                                                    },
+                                        "locations":  [
+                                                          "Chrome (Default)"
+                                                      ]
+                                    },
+                         "source":  "LAB-EXP003",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Text from the last day may still be here: preserve today.",
+                         "clock":  {
+                                       "status":  "urgent",
+                                       "headline":  "Recent activity may disappear within about 11 hours",
+                                       "deadline":  "2026-10-13T22:48:00Z",
+                                       "detail":  "In our lab, on Chrome 154, 3 October 2026, one run: test text was present at 0.7 days and absent by 1.2 days."
+                                   }
+                     },
+                     {
+                         "id":  "codex-agent-logs",
+                         "tool":  "ChatGPT / Codex agent",
+                         "service":  "chatgpt",
+                         "evidence":  "Agent debug log database",
+                         "why":  "This agent log database can contain requests, commands and times.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "partial":  false,
+                                        "summary":  {
+                                                        "files":  1,
+                                                        "bytes":  16,
+                                                        "newest":  "2026-10-13T06:00:00Z",
+                                                        "oldest":  "2026-10-13T06:00:00Z"
+                                                    },
+                                        "locations":  [
+                                                          "%USERPROFILE%\\.codex\\logs_*.sqlite"
+                                                      ],
+                                        "found_locations":  [
+                                                                "%USERPROFILE%\\.codex"
+                                                            ]
+                                    },
+                         "source":  "NOT-MEASURED",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Preserve this file now, before any agent thread is deleted.",
+                         "clock":  {
+                                       "status":  "urgent",
+                                       "headline":  "At risk when the thread is deleted in the app",
+                                       "detail":  "Lifetime not measured for a recorded app version. Treat these files as at risk while threads can be deleted, archived or cleared in the app."
+                                   }
+                     },
+                     {
+                         "id":  "ai-notifications",
+                         "tool":  "Windows",
+                         "service":  "*",
+                         "evidence":  "Windows notifications from AI apps",
+                         "why":  "Notification history can include the first words of an AI reply.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "names":  [
+                                                      "OpenAI.Codex"
+                                                  ],
+                                        "modified":  "2026-10-13T06:00:00Z"
+                                    },
+                         "source":  "LAB-EXP001",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Notifications from the last 2 days may still exist: preserve today.",
+                         "clock":  {
+                                       "status":  "urgent",
+                                       "headline":  "Lasts about 2.4 to 3.9 days",
+                                       "detail":  "In our lab, on ChatGPT desktop OpenAI.Codex 26.928, starting 2 October 2026, one run: a notification was present at 2.4 days and absent by 3.9 days."
+                                   }
+                     },
+                     {
+                         "id":  "codex-agent-threads",
+                         "tool":  "ChatGPT / Codex agent",
+                         "service":  "chatgpt",
+                         "evidence":  "Agent thread databases",
+                         "why":  "These databases can contain agent-thread records, commands, folders and times.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "partial":  false,
+                                        "summary":  {
+                                                        "files":  1,
+                                                        "bytes":  16,
+                                                        "newest":  "2026-10-13T06:00:00Z",
+                                                        "oldest":  "2026-10-13T06:00:00Z"
+                                                    },
+                                        "locations":  [
+                                                          "%USERPROFILE%\\.codex\\state_*.sqlite"
+                                                      ],
+                                        "found_locations":  [
+                                                                "%USERPROFILE%\\.codex"
+                                                            ]
+                                    },
+                         "source":  "NOT-MEASURED",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Preserve these files now, before any agent thread is deleted.",
+                         "clock":  {
+                                       "status":  "urgent",
+                                       "headline":  "At risk when the thread is deleted in the app",
+                                       "detail":  "Lifetime not measured for a recorded app version. Treat these files as at risk while threads can be deleted, archived or cleared in the app."
+                                   }
+                     },
+                     {
+                         "id":  "codex-agent-sessions",
+                         "tool":  "ChatGPT / Codex agent",
+                         "service":  "chatgpt",
+                         "evidence":  "Agent session files",
+                         "why":  "Agent sessions and their replies stored on disk.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "partial":  false,
+                                        "summary":  {
+                                                        "files":  1,
+                                                        "bytes":  2,
+                                                        "newest":  "2026-10-13T06:00:00Z",
+                                                        "oldest":  "2026-10-13T06:00:00Z"
+                                                    },
+                                        "locations":  [
+                                                          "%USERPROFILE%\\.codex\\sessions\\**\\*.jsonl"
+                                                      ],
+                                        "found_locations":  [
+                                                                "%USERPROFILE%\\.codex\\sessions"
+                                                            ]
+                                    },
+                         "source":  "NOT-MEASURED",
+                         "also_sources":  [
+                                              "LAB-MARKS"
+                                          ],
+                         "action":  "Preserve this folder before a thread is deleted in the app.",
+                         "clock":  {
+                                       "status":  "urgent",
+                                       "headline":  "At risk when the thread is deleted in the app",
+                                       "detail":  "Lifetime not measured for a recorded app version. Treat these files as at risk while threads can be deleted, archived or cleared in the app."
+                                   }
+                     },
+                     {
+                         "id":  "chatgpt-desktop-logs",
+                         "tool":  "ChatGPT desktop app",
+                         "service":  "chatgpt",
+                         "evidence":  "App log files",
+                         "why":  "In the lab run, these app logs recorded when chats started.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "partial":  false,
+                                        "summary":  {
+                                                        "files":  2,
+                                                        "bytes":  32,
+                                                        "newest":  "2026-10-13T06:00:00Z",
+                                                        "oldest":  "2026-10-13T06:00:00Z"
+                                                    },
+                                        "locations":  [
+                                                          "%LOCALAPPDATA%\\Codex\\Logs\\**\\*.log",
+                                                          "%LOCALAPPDATA%\\Packages\\OpenAI.Codex_*\\LocalCache\\Local\\Codex\\Logs\\**\\*.log"
+                                                      ],
+                                        "found_locations":  [
+                                                                "%LOCALAPPDATA%\\Codex\\Logs",
+                                                                "%LOCALAPPDATA%\\Packages\\OpenAI.Codex_abc\\LocalCache\\Local\\Codex\\Logs"
+                                                            ]
+                                    },
+                         "source":  "LAB-EXP001",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Preserve before the app is updated or reinstalled.",
+                         "clock":  {
+                                       "status":  "rolling",
+                                       "headline":  "Oldest item reaches the 14-day reference window in about 14 days",
+                                       "deadline":  "2026-10-27T06:00:00Z",
+                                       "detail":  "In our lab, on ChatGPT desktop OpenAI.Codex 26.928, starting 2 October 2026, one run with daily checks: a log line was present at 14.0 days and gone at 14.1 days. Age versus size rotation was not measured. Today the limit falls on 29 Sep 2026; it moves forward every day."
+                                   }
+                     },
+                     {
+                         "id":  "claude-code-transcripts",
+                         "tool":  "Claude Code",
+                         "service":  "claude",
+                         "evidence":  "Claude Code session transcripts",
+                         "why":  "Full transcripts of coding-agent sessions, per project.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "partial":  false,
+                                        "summary":  {
+                                                        "files":  1,
+                                                        "bytes":  2,
+                                                        "newest":  "2026-10-13T06:00:00Z",
+                                                        "oldest":  "2026-10-13T06:00:00Z"
+                                                    },
+                                        "locations":  [
+                                                          "%USERPROFILE%\\.claude\\projects\\**\\*.jsonl"
+                                                      ],
+                                        "found_locations":  [
+                                                                "%USERPROFILE%\\.claude\\projects"
+                                                            ]
+                                    },
+                         "source":  "CLAUDE-CODE",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Preserve transcripts before automatic deletion can remove them.",
+                         "clock":  {
+                                       "status":  "rolling",
+                                       "headline":  "Oldest item reaches the 30-day reference window in about 30 days",
+                                       "deadline":  "2026-11-12T06:00:00Z",
+                                       "detail":  "Claude Code docs say local transcripts older than the configured retention period are deleted automatically when the period can be determined; the default is 30 days. Check the local setting. Today the limit falls on 13 Sep 2026; it moves forward every day."
+                                   }
+                     },
+                     {
+                         "id":  "browser-history",
+                         "tool":  "Web browsers",
+                         "service":  "*",
+                         "evidence":  "AI sites in browser history",
+                         "why":  "Shows which listed AI site names appear in the browser history files it could read. A match does not prove what a person viewed or said.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "partial":  false,
+                                        "profiles":  [
+                                                         {
+                                                             "browser":  "Chrome",
+                                                             "profile":  "Default",
+                                                             "engine":  "chromium",
+                                                             "readable":  true,
+                                                             "partial":  false,
+                                                             "services":  [
+                                                                              "ChatGPT",
+                                                                              "Claude",
+                                                                              "Gemini"
+                                                                          ],
+                                                             "service_ids":  [
+                                                                                 "chatgpt",
+                                                                                 "claude",
+                                                                                 "gemini"
+                                                                             ],
+                                                             "modified":  "2026-10-13T06:00:00Z"
+                                                         }
+                                                     ]
+                                    },
+                         "source":  "GOOGLE-CHROME",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Preserve the browser profile; older visits drop off every day.",
+                         "clock":  {
+                                       "status":  "rolling",
+                                       "headline":  "Reference window: about 90 days",
+                                       "detail":  "Google\u0027s Chrome Help says its History lists the last 90 days. That page does not establish how long a local History file retains every visit; Edge, Brave and Firefox were not separately measured. Today the limit falls on 15 Jul 2026; it moves forward every day."
+                                   }
+                     },
+                     {
+                         "id":  "cloud-gemini",
+                         "tool":  "Gemini (Google account)",
+                         "service":  "gemini",
+                         "evidence":  "Gemini Apps Activity in the Google account",
+                         "why":  "With Keep Activity on, a personal Google account stores Gemini Apps activity; this local check cannot inspect it.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "seen_in":  [
+                                                        "Chrome history"
+                                                    ]
+                                    },
+                         "source":  "GOOGLE-GEMINI",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Check the Gemini Activity auto-delete setting and export with Google Takeout now.",
+                         "clock":  {
+                                       "status":  "cloud",
+                                       "headline":  "Account activity follows its auto-delete setting; see vendor exceptions",
+                                       "detail":  "Google says personal Gemini Apps activity auto-deletes after 18 months by default; the setting can be changed. With Keep Activity off, a chat may remain with the account for up to 72 hours. Work accounts differ."
+                                   }
+                     },
+                     {
+                         "id":  "cloud-claude",
+                         "tool":  "Claude account (Anthropic servers)",
+                         "service":  "claude",
+                         "evidence":  "Chats stored in the Claude account",
+                         "why":  "The account may hold conversation records that this local check cannot inspect.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "seen_in":  [
+                                                        "Claude desktop app",
+                                                        "Claude Code",
+                                                        "Chrome history",
+                                                        "Claude (web)"
+                                                    ]
+                                    },
+                         "source":  "ANTHROPIC-RETENTION",
+                         "also_sources":  [
+                                              "LAB-EXPORTS"
+                                          ],
+                         "action":  "Request an account export now (Claude \u003e Settings \u003e Privacy \u003e Export data) and download it when it arrives.",
+                         "clock":  {
+                                       "status":  "cloud",
+                                       "headline":  "Vendor describes a 30-day deletion window; see stated exceptions",
+                                       "detail":  "Anthropic says a deleted consumer conversation is removed from back-end storage within 30 days, subject to its stated exceptions. Work and API accounts have separate terms."
+                                   }
+                     },
+                     {
+                         "id":  "cloud-chatgpt",
+                         "tool":  "ChatGPT account (OpenAI servers)",
+                         "service":  "chatgpt",
+                         "evidence":  "Chats stored in the ChatGPT account",
+                         "why":  "The account may hold conversation records that this local check cannot inspect.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "seen_in":  [
+                                                        "ChatGPT desktop app",
+                                                        "ChatGPT / Codex agent",
+                                                        "Chrome history",
+                                                        "ChatGPT (web)",
+                                                        "downloaded files"
+                                                    ]
+                                    },
+                         "source":  "OPENAI-RETENTION",
+                         "also_sources":  [
+                                              "LAB-EXPORTS"
+                                          ],
+                         "action":  "Request an account export now (ChatGPT \u003e Settings \u003e Data controls \u003e Export data) and download it within 24 hours of the email.",
+                         "clock":  {
+                                       "status":  "cloud",
+                                       "headline":  "Vendor describes a 30-day deletion window; see stated exceptions",
+                                       "detail":  "OpenAI says a deleted chat is scheduled for permanent deletion within 30 days, subject to security, legal and workspace exceptions. Temporary Chats have separate rules. OpenAI says deleted chats cannot be restored in ChatGPT or through Support; request an export before deletion."
+                                   }
+                     },
+                     {
+                         "id":  "claude-desktop-data",
+                         "tool":  "Claude desktop app",
+                         "service":  "claude",
+                         "evidence":  "Claude desktop app data folder",
+                         "why":  "App storage for the Claude desktop app.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "partial":  false,
+                                        "summary":  {
+                                                        "files":  4,
+                                                        "bytes":  64,
+                                                        "newest":  "2026-10-13T06:00:00Z",
+                                                        "oldest":  "2026-10-13T06:00:00Z"
+                                                    },
+                                        "locations":  [
+                                                          "%APPDATA%\\Claude\\**\\*",
+                                                          "%LOCALAPPDATA%\\Claude-Data\\claude_*\\**\\*",
+                                                          "%LOCALAPPDATA%\\Claude\\logs\\*.log",
+                                                          "%LOCALAPPDATA%\\Packages\\Claude_*\\LocalCache\\Roaming\\Claude\\**\\*"
+                                                      ],
+                                        "found_locations":  [
+                                                                "%APPDATA%\\Claude",
+                                                                "%LOCALAPPDATA%\\Claude\\logs",
+                                                                "%LOCALAPPDATA%\\Claude-Data\\claude_abc",
+                                                                "%LOCALAPPDATA%\\Packages\\Claude_abc\\LocalCache\\Roaming\\Claude"
+                                                            ]
+                                    },
+                         "source":  "NOT-MEASURED",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Preserve before the app is updated or uninstalled.",
+                         "clock":  {
+                                       "status":  "unknown",
+                                       "headline":  "Lifetime not measured yet",
+                                       "detail":  "Treat as at risk until measured."
+                                   }
+                     },
+                     {
+                         "id":  "cursor-chat-store",
+                         "tool":  "Cursor",
+                         "service":  null,
+                         "evidence":  "Cursor editor chat and agent store",
+                         "why":  "This Cursor data store may contain AI chat and agent history.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "partial":  false,
+                                        "summary":  {
+                                                        "files":  1,
+                                                        "bytes":  16,
+                                                        "newest":  "2026-10-13T06:00:00Z",
+                                                        "oldest":  "2026-10-13T06:00:00Z"
+                                                    },
+                                        "locations":  [
+                                                          "%APPDATA%\\Cursor\\User\\globalStorage\\state.vscdb"
+                                                      ],
+                                        "found_locations":  [
+                                                                "%APPDATA%\\Cursor\\User\\globalStorage"
+                                                            ]
+                                    },
+                         "source":  "NOT-MEASURED",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Preserve before Cursor is updated or reset.",
+                         "clock":  {
+                                       "status":  "unknown",
+                                       "headline":  "Lifetime not measured yet",
+                                       "detail":  "Treat as at risk until measured."
+                                   }
+                     },
+                     {
+                         "id":  "vscode-agent-tasks",
+                         "tool":  "VS Code AI agents (Cline, Roo, Kilo)",
+                         "service":  null,
+                         "evidence":  "Agent task histories",
+                         "why":  "These extension task folders may contain agent conversations.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "partial":  false,
+                                        "summary":  {
+                                                        "files":  1,
+                                                        "bytes":  16,
+                                                        "newest":  "2026-10-13T06:00:00Z",
+                                                        "oldest":  "2026-10-13T06:00:00Z"
+                                                    },
+                                        "locations":  [
+                                                          "%APPDATA%\\Code\\User\\globalStorage\\saoudrizwan.claude-dev\\tasks\\**\\*"
+                                                      ],
+                                        "found_locations":  [
+                                                                "%APPDATA%\\Code\\User\\globalStorage\\saoudrizwan.claude-dev\\tasks"
+                                                            ]
+                                    },
+                         "source":  "NOT-MEASURED",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Preserve before the extension is removed.",
+                         "clock":  {
+                                       "status":  "unknown",
+                                       "headline":  "Lifetime not measured yet",
+                                       "detail":  "Treat as at risk until measured."
+                                   }
+                     },
+                     {
+                         "id":  "local-ai-models",
+                         "tool":  "Local AI (Ollama, LM Studio, GPT4All, Jan, AnythingLLM)",
+                         "service":  null,
+                         "evidence":  "Local AI app folders",
+                         "why":  "These folders may contain local models and saved chat threads. Data processed locally can still be evidence.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "partial":  false,
+                                        "summary":  {
+                                                        "files":  1,
+                                                        "bytes":  16,
+                                                        "newest":  "2026-10-13T06:00:00Z",
+                                                        "oldest":  "2026-10-13T06:00:00Z"
+                                                    },
+                                        "locations":  [
+                                                          "%USERPROFILE%\\.ollama\\**\\*"
+                                                      ],
+                                        "found_locations":  [
+                                                                "%USERPROFILE%\\.ollama"
+                                                            ]
+                                    },
+                         "source":  "NOT-MEASURED",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Preserve before the app or its models are removed.",
+                         "clock":  {
+                                       "status":  "unknown",
+                                       "headline":  "Lifetime not measured yet",
+                                       "detail":  "Treat as at risk until measured."
+                                   }
+                     },
+                     {
+                         "id":  "chatgpt-web-storage",
+                         "tool":  "ChatGPT (web)",
+                         "service":  "chatgpt",
+                         "evidence":  "chatgpt.com storage inside the browser",
+                         "why":  "A local storage folder can exist without chat text. In one Chrome 154 lab run on 3 October 2026, deleted-chat text was absent.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "summary":  {
+                                                        "files":  1,
+                                                        "bytes":  16,
+                                                        "newest":  "2026-10-13T06:00:00Z",
+                                                        "oldest":  "2026-10-13T06:00:00Z"
+                                                    },
+                                        "locations":  [
+                                                          "Chrome (Default)"
+                                                      ]
+                                    },
+                         "source":  "LAB-EXP003",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Do not rely on it: request the account export (below).",
+                         "clock":  {
+                                       "status":  "unreliable",
+                                       "headline":  "Not a reliable source of chat text",
+                                       "detail":  "In our lab, on Chrome 154, 3 October 2026, one run: deleted-chat text was not found in the checked local storage."
+                                   }
+                     },
+                     {
+                         "id":  "chatgpt-desktop-prompt-history",
+                         "tool":  "ChatGPT desktop app",
+                         "service":  "chatgpt",
+                         "evidence":  "Prompt history kept by the ChatGPT desktop app",
+                         "why":  "The ChatGPT desktop app can keep a typed-prompt record. LUMINOL reports its existence and age, not its text.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "partial":  false,
+                                        "summary":  {
+                                                        "files":  1,
+                                                        "bytes":  2,
+                                                        "newest":  "2026-10-13T06:00:00Z",
+                                                        "oldest":  "2026-10-13T06:00:00Z"
+                                                    },
+                                        "locations":  [
+                                                          "%USERPROFILE%\\.codex\\.codex-global-state.json"
+                                                      ],
+                                        "found_locations":  [
+                                                                "%USERPROFILE%\\.codex"
+                                                            ]
+                                    },
+                         "source":  "LAB-EXP001",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Preserve this folder before the app is updated, reinstalled or uninstalled.",
+                         "clock":  {
+                                       "status":  "stable",
+                                       "headline":  "Present after 15 days in the cited lab run",
+                                       "detail":  "In our lab, on ChatGPT desktop OpenAI.Codex 26.928, starting 2 October 2026, one run with daily checks: this file was present 15 days after in-app chat deletion."
+                                   }
+                     },
+                     {
+                         "id":  "ai-downloads",
+                         "tool":  "Windows",
+                         "service":  "*",
+                         "evidence":  "Files downloaded from AI sites",
+                         "why":  "Some downloaded files carry a Windows source-site mark. LUMINOL reports a match when that mark names a listed AI site.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "partial":  false,
+                                        "files":  1,
+                                        "files_checked":  1,
+                                        "newest":  "2026-10-13T06:00:00Z",
+                                        "by_service":  [
+                                                           {
+                                                               "service":  "chatgpt",
+                                                               "name":  "ChatGPT",
+                                                               "files":  1
+                                                           }
+                                                       ],
+                                        "by_type":  [
+                                                        {
+                                                            "type":  ".pdf",
+                                                            "files":  1
+                                                        }
+                                                    ]
+                                    },
+                         "source":  "WIN-MOTW",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Keep these files where they are; copying them can drop the mark.",
+                         "clock":  {
+                                       "status":  "stable",
+                                       "headline":  "The download mark may remain while the file stays in place",
+                                       "detail":  "A source-site mark may remain while the file stays in place. Moving or copying it can remove the mark."
+                                   }
+                     },
+                     {
+                         "id":  "recent-files",
+                         "tool":  "Windows",
+                         "service":  null,
+                         "evidence":  "Recently opened files list",
+                         "why":  "Recently opened-file shortcuts may identify documents to review. They do not show whether a document was uploaded or pasted into an AI tool.",
+                         "present":  true,
+                         "result":  {
+                                        "present":  true,
+                                        "partial":  false,
+                                        "summary":  {
+                                                        "files":  1,
+                                                        "bytes":  16,
+                                                        "newest":  "2026-10-13T06:00:00Z",
+                                                        "oldest":  "2026-10-13T06:00:00Z"
+                                                    },
+                                        "locations":  [
+                                                          "%APPDATA%\\Microsoft\\Windows\\Recent\\*.lnk"
+                                                      ],
+                                        "found_locations":  [
+                                                                "%APPDATA%\\Microsoft\\Windows\\Recent"
+                                                            ]
+                                    },
+                         "source":  "LAB-EXP001",
+                         "also_sources":  [
+
+                                          ],
+                         "action":  "Preserve; Windows replaces old entries as new files are opened.",
+                         "clock":  {
+                                       "status":  "stable",
+                                       "headline":  "Present after 15 days in the cited lab run",
+                                       "detail":  "In our lab on Windows 10, starting 2 October 2026, one run with daily checks: test-document shortcuts were present after 15 days. Other Windows builds may differ."
+                                   }
+                     }
+                 ],
+    "cannot_answer":  [
+                          "Whether browser history or files were cleared or deleted before this check. A cleared history looks the same to LUMINOL as one with no AI visits. A forensic triage can look for signs of clearing.",
+                          "What was typed or answered. LUMINOL checks where evidence exists and when it was last changed without reading conversation text.",
+                          "What the AI vendors still hold beyond their published policies. Business and enterprise plans can have different retention.",
+                          "Other devices (phones, home computers), other Windows accounts, and browsers not used by this Windows account.",
+                          "Apps and sites not in this version\u0027s list.",
+                          "What an AI agent did through Windows\u0027 own records (the file-system change journal and Prefetch). LUMINOL does not inspect these records; an administrator collection may be needed.",
+                          "Exact lifetimes on this machine: lab observations came from one Windows 10 machine, with app versions recorded for some items."
+                      ],
+    "lab_note":  "SAMPLE DATA - generated from a synthetic Windows profile. Lab observations came from one Windows 10 machine in October 2026; each measured item names its tested app version and observation date where recorded. Results may differ on other machines. Vendor windows are subject to the vendor\u0027s stated exceptions.",
+    "sources":  [
+                    {
+                        "id":  "ANTHROPIC-RETENTION",
+                        "label":  "Anthropic Privacy Center: How long do you store my data? (checked 23 October 2026; consumer deleted chats removed from back-end storage within 30 days, subject to stated exceptions)",
+                        "kind":  "vendor",
+                        "url":  "https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data"
+                    },
+                    {
+                        "id":  "CLAUDE-CODE",
+                        "label":  "Claude Code documentation (checked 24 October 2026): automatic deletion of local transcripts uses a retention setting, default 30 days",
+                        "kind":  "vendor",
+                        "url":  "https://code.claude.com/docs/en/claude-directory"
+                    },
+                    {
+                        "id":  "GOOGLE-CHROME",
+                        "label":  "Google Chrome Help (checked 23 October 2026): History lists pages visited in the last 90 days; local file retention may differ",
+                        "kind":  "vendor",
+                        "url":  "https://support.google.com/chrome/answer/95589"
+                    },
+                    {
+                        "id":  "GOOGLE-GEMINI",
+                        "label":  "Gemini Apps Help (checked 23 October 2026): personal-account activity auto-deletes after 18 months by default; setting and account type may differ",
+                        "kind":  "vendor",
+                        "url":  "https://support.google.com/gemini/answer/13278892"
+                    },
+                    {
+                        "id":  "LAB-EXP001",
+                        "label":  "SAF lab EXP-001: ChatGPT desktop Store package OpenAI.Codex 26.928, 2 October 2026, one run with daily follow-up",
+                        "kind":  "measured",
+                        "url":  null
+                    },
+                    {
+                        "id":  "LAB-EXP003",
+                        "label":  "SAF lab EXP-003: ChatGPT and Claude in Chrome 154, 3 October 2026, one run with daily follow-up",
+                        "kind":  "measured",
+                        "url":  null
+                    },
+                    {
+                        "id":  "LAB-EXPORTS",
+                        "label":  "SAF lab, October 2026: account exports were checked after chat deletion; export contents may vary by account",
+                        "kind":  "measured",
+                        "url":  null
+                    },
+                    {
+                        "id":  "LAB-MARKS",
+                        "label":  "SAF lab daily marks: ChatGPT desktop agent folder, daily checks from 2026-10-03",
+                        "kind":  "measured",
+                        "url":  null
+                    },
+                    {
+                        "id":  "NOT-MEASURED",
+                        "label":  "Not measured yet in the SAF lab",
+                        "kind":  "unknown",
+                        "url":  null
+                    },
+                    {
+                        "id":  "OPENAI-RETENTION",
+                        "label":  "OpenAI Help: Deleting and archiving chats in ChatGPT (checked 23 October 2026; 30-day deletion schedule subject to security, legal and workspace exceptions)",
+                        "kind":  "vendor",
+                        "url":  "https://help.openai.com/en/articles/8809935-deleting-and-archiving-chats-in-chatgpt"
+                    },
+                    {
+                        "id":  "WIN-MOTW",
+                        "label":  "Microsoft file-system specification: Zone.Identifier stream records a file\u0027s security zone; LUMINOL checks available source-URL fields",
+                        "kind":  "design",
+                        "url":  "https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/6e3f7352-d11c-4d76-8c39-2516a9df36e8"
+                    }
+                ],
+    "problems":  [
+
+                 ],
+    "privacy":  "This report was made on this computer. LUMINOL read file names, sizes and dates, and checked whether AI site names appear in a few files. It did not read conversation text. Windows on this computer records when files are last opened, so this check updated the last-access time of the files and folders it read. It changed nothing else about them. Running the check sent nothing over the internet. If you choose to timestamp this report later, a fingerprint of it is sent (see the .seal.json file).",
+    "timestamp_requested":  false
+}
