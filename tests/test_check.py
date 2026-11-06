@@ -26,6 +26,15 @@ def touch(path, data=b"x", days_ago=0.0):
     os.utime(path, (t, t))
 
 
+def zone_mark(path, text, days_ago):
+    # Writing an NTFS stream changes the file's own modified time to the real clock, so the
+    # fixture time is set again afterwards (the old order made this test depend on the real month).
+    with open(path + ":Zone.Identifier", "w") as f:
+        f.write(text)
+    t = (NOW - timedelta(days=days_ago)).timestamp()
+    os.utime(path, (t, t))
+
+
 def run(profile, out, extra=()):
     cmd = ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", SCRIPT,
            "-ProfileRoot", profile, "-OutDir", out, "-NoOpen", "-Now", NOW.isoformat()] + list(extra)
@@ -92,11 +101,10 @@ def profile(tmp_path_factory):
     # Downloads: one file from chatgpt.com (Mark of the Web), one from elsewhere, one without a mark
     dl = os.path.join(prof, "Downloads")
     touch(os.path.join(dl, "report.docx"), b"doc", 3)
-    with open(os.path.join(dl, "report.docx") + ":Zone.Identifier", "w") as f:
-        f.write("[ZoneTransfer]\nZoneId=3\nReferrerUrl=https://chatgpt.com/\nHostUrl=https://files.oaiusercontent.com/file-x\n")
+    zone_mark(os.path.join(dl, "report.docx"),
+              "[ZoneTransfer]\nZoneId=3\nReferrerUrl=https://chatgpt.com/\nHostUrl=https://files.oaiusercontent.com/file-x\n", 3)
     touch(os.path.join(dl, "other.pdf"), b"pdf", 3)
-    with open(os.path.join(dl, "other.pdf") + ":Zone.Identifier", "w") as f:
-        f.write("[ZoneTransfer]\nZoneId=3\nHostUrl=https://example.com/other.pdf\n")
+    zone_mark(os.path.join(dl, "other.pdf"), "[ZoneTransfer]\nZoneId=3\nHostUrl=https://example.com/other.pdf\n", 3)
     touch(os.path.join(dl, "plain.txt"), b"t", 3)
     touch(os.path.join(R, "Microsoft", "Windows", "Recent", "sample.lnk"), b"PRIVATE_LINK_TEXT", 0.5)
     return prof
@@ -339,7 +347,7 @@ def test_catalogue_positive(iid, result):
     elif iid == "ai-notifications":
         assert r["names"] and r["modified"].startswith("2026-10-")
     elif iid == "ai-downloads":
-        assert r["files"] == 1 and r["newest"].startswith("2026-10-")
+        assert r["files"] == 1 and r["newest"] == "2026-10-10T12:00:00Z"  # the fixture time, not the real clock
     else:
         assert r["seen_in"], iid
     assert USER not in raw and USER not in page
@@ -511,3 +519,104 @@ def test_unwritable_report_folder_is_explained(profile, tmp_path):
            "-OutDir", str(blocked), "-NoOpen", "-Now", NOW.isoformat()]
     p = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
     assert p.returncode == 4 and "cannot write the report" in p.stdout, p.stdout + p.stderr
+
+
+# ---- report escaping (strategy L3, 2026-11-06) ----------------------------------------------------------------------
+# The HTML report shows text that comes from the computer (browser profile folder names, file paths, problem notes,
+# the Windows name). It must show that text as text and never run it. Windows file and folder names cannot contain
+# < > or ", so the end-to-end test plants a real profile folder with ' and &; the template test renders a report whose
+# every free-text value carries tag, attribute and </script> payloads. Both open the page in headless Microsoft Edge
+# and read the resulting page, so the browser itself decides what was escaped.
+from html.parser import HTMLParser
+
+EDGE = next((p for p in (os.path.join(os.environ.get("ProgramFiles(x86)", ""), r"Microsoft\Edge\Application\msedge.exe"),
+                         os.path.join(os.environ.get("ProgramFiles", ""), r"Microsoft\Edge\Application\msedge.exe"))
+             if os.path.isfile(p)), None)
+needs_edge = pytest.mark.skipif(EDGE is None, reason="Microsoft Edge not installed")
+PROBE = "luminolprobe"
+HOSTILE = ("<img id=" + PROBE + " src=x onerror=\"document.title='" + PROBE + "'\">"
+           "\" onmouseover=\"document.title='" + PROBE + "'\" x=\"' onfocus='document.title=1' "
+           "</script><script>document.title='" + PROBE + "'</script>")
+# Values the template uses as structure (ids, status keys, links, dates), not as free text.
+STRUCTURAL = {"id", "status", "kind", "schema", "engine", "service", "service_ids", "source", "also_sources", "url",
+              "deadline", "generated_at", "modified", "newest", "oldest", "type", "parameters", "readable"}
+
+
+class _Dom(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.tags, self.title, self._in_title = [], "", False
+
+    def handle_starttag(self, tag, attrs):
+        self.tags.append((tag, dict(attrs)))
+        self._in_title = tag == "title"
+
+    def handle_endtag(self, tag):
+        self._in_title = False
+
+    def handle_data(self, data):
+        if self._in_title:
+            self.title += data
+
+
+def rendered(html_text, tmp):
+    """The page as Edge builds it after the report's script has run."""
+    path = os.path.join(tmp, "report.html")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(html_text)
+    p = subprocess.run([EDGE, "--headless=new", "--disable-gpu", "--no-first-run", "--disable-background-networking",
+                        "--disable-component-update", "--disable-extensions", "--user-data-dir=" + os.path.join(tmp, "edge"),
+                        "--dump-dom", "file:///" + path.replace("\\", "/")],
+                       capture_output=True, text=True, encoding="utf-8", timeout=180)
+    assert 'id="report"' in p.stdout, p.stderr[-2000:]
+    dom = _Dom()
+    dom.feed(p.stdout)
+    return p.stdout, dom
+
+
+def assert_nothing_ran(dom, text):
+    assert PROBE not in dom.title and dom.title.strip() != "1", dom.title
+    assert not [t for t, a in dom.tags if a.get("id") == PROBE or (t == "img" and a.get("src") == "x")]
+    injected = [(t, a) for t, a in dom.tags for k, v in a.items()
+                if k in ("onerror", "onmouseover", "onfocus") or (k.startswith("on") and PROBE in (v or ""))]
+    assert not injected, injected[:3]
+    assert not [t for t, a in dom.tags if t == "script" and not a][1:], "an extra inline script appeared"
+
+
+def poison(v, key=None):
+    if isinstance(v, dict):
+        return {k: (v[k] if k in STRUCTURAL else poison(v[k], k)) for k in v}
+    if isinstance(v, list):
+        return [poison(x, key) for x in v]
+    if isinstance(v, str) and v:
+        return v + " " + HOSTILE
+    return v
+
+
+@needs_edge
+def test_report_template_shows_hostile_text_as_text(result, tmp_path):
+    d = poison(result[0])
+    d["problems"] = [HOSTILE]                       # also a value that is nothing but the payload
+    with open(os.path.join(ROOT, "src", "report-template.html"), encoding="utf-8") as f:
+        template = f.read()
+    # Same embedding as Luminol-Check.ps1: the JSON goes into the page with '</' written as '<\/'.
+    page = template.replace("/*__LUMINOL_DATA__*/null", json.dumps(d).replace("</", "<\\/"))
+    text, dom = rendered(page, str(tmp_path))
+    assert_nothing_ran(dom, text)
+    assert "&lt;img id=" + PROBE in text            # the payload is on the page, as visible text
+    assert text.count("&lt;img id=" + PROBE) >= 5   # in several places (problems, profiles, notes, Windows name...)
+
+
+@needs_edge
+def test_real_report_shows_machine_names_as_text(tmp_path_factory):
+    base = tmp_path_factory.mktemp("hostile-profile")
+    prof = str(base / USER)
+    name = "x' onmouseover='document.title=1' & Co"   # a real folder name: Windows allows ' and & but not < > "
+    touch(os.path.join(prof, "AppData", "Roaming", "Mozilla", "Firefox", "Profiles", name, "places.sqlite"),
+          b"SQLite format 3\x00 chatgpt.com", 1)
+    d, raw, page = run(prof, str(tmp_path_factory.mktemp("hostile-out")))
+    ff = [p for p in item(d, "browser-history")["result"]["profiles"] if p["browser"] == "Firefox"][0]
+    assert ff["profile"] == name and "ChatGPT" in ff["services"]
+    text, dom = rendered(page, str(tmp_path_factory.mktemp("hostile-edge")))
+    assert_nothing_ran(dom, text)
+    assert "x' onmouseover='document.title=1' &amp; Co" in text   # shown as text, & escaped
