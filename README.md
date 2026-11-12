@@ -31,7 +31,7 @@ evidence, each covered by a positive and a negative synthetic test.
 
 ## How LUMINOL is built
 
-Adil Ali directs LUMINOL and is responsible for it. Much of the code and tests were written with AI coding assistants (Anthropic's Claude and OpenAI's Codex). Nothing ships on trust in an assistant: every release must pass the full test suite, build twice to a byte-identical zip, pass a tamper test and a review by a separate AI session that did not write the code, and its exact SHA-256 is published.
+Adil Ali directs LUMINOL, decides what it checks, approves how every result is worded, and is responsible for it. What it checks and the limits it states come from our own lab tests on test machines and from vendors' published documentation. The code and tests are written with AI coding assistants (Anthropic's Claude and OpenAI's Codex), under Adil's direction and review. Nothing ships on trust in an assistant: every release must pass the full test suite, build twice to a byte-identical zip, pass a tamper test and a review by a separate session that did not write the code, and its exact SHA-256 is published.
 
 ## Run it
 
