@@ -29,10 +29,6 @@ evidence, each covered by a positive and a negative synthetic test.
   that Windows may update the last-access time of files and folders it reads. Read the
   [measured changes and limits](WHAT-IT-CHANGES.md) before treating the report as forensic evidence.
 
-## How LUMINOL is built
-
-Adil Ali directs LUMINOL, decides what it checks, approves how every result is worded, and is responsible for it. What it checks and the limits it states come from our own lab tests on test machines and from vendors' published documentation. The code and tests are written with AI coding assistants (Anthropic's Claude and OpenAI's Codex), under Adil's direction and review. Nothing ships on trust in an assistant: every release must pass the full test suite, build twice to a byte-identical zip, pass a tamper test and a review by a separate session that did not write the code, and its exact SHA-256 is published.
-
 ## Run it
 
 Download LUMINOL only from github.com/adilshadowaiforensics/luminol. We publish no other copy. Check the SHA-256 before you run it.
@@ -79,3 +75,12 @@ Running this for an organisation? We offer a free 15-minute deadline call: email
 the subject "Deadline call". Ran it at work? Forward the report to your IT, legal or compliance team: it dates, for each kind of evidence in the Windows account it checked, when that evidence starts to disappear, and marks every kind whose lifetime is not yet measured.
 
 LUMINOL is independent. It is not affiliated with or endorsed by OpenAI, Anthropic, Google, Cursor or any other vendor it names. Product names belong to their owners.
+
+### How it is built
+
+LUMINOL is developed with the help of AI coding assistants (Anthropic's Claude and OpenAI's Codex).
+
+- **Decisions:** what LUMINOL checks, the limits it states and the wording of every result are decided by Adil Ali, based on our own lab tests on test machines and on vendors' published documentation.
+- **Verification:** nothing ships on an assistant's word. Every release passes the full test suite, builds twice to a byte-identical zip, passes a tamper test and is reviewed by a separate AI session that did not write the code. Each release's SHA-256 is published.
+- **Your data:** LUMINOL sends nothing to any AI service. It runs offline, apart from the optional seal.
+- **Responsibility:** Adil Ali is responsible for every release.
